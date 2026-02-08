@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>She Said Yes ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #7a0019, #2b0008);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+
+.card{
+  width:85%;
+  max-width:560px;      
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(14px);
+  padding:6% 5%;        
+  border-radius:5%;
+  text-align:center;
+  box-shadow:0 3vh 6vh rgba(255,0,64,0.35);
+  animation:fadeUp 1s ease;
+  color:#fff;
+  z-index:5;
+}
+
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(40px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.love-img {
+  width: 40%;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(255, 0, 64, 0.5);
+  margin-bottom: 18px;
+  animation: softPulse 4s infinite;
+}
+
+/* GIF space */
+.love-gif {
+  width: 140%;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(255, 0, 64, 0.45);
+}
+
+@keyframes softPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 14px;
+  color: #ff4d6d;
+}
+
+p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+
+/* Love Text */
+.love-text {
+  background: linear-gradient(135deg, #ff1e56, #ff4d6d);
+  padding: 16px 28px;
+  border-radius: 22px;
+  display: inline-block;
+  font-weight: 500;
+  box-shadow: 0 15px 40px rgba(255, 0, 64, 0.45);
+}
+
+/* Music Button */
+.music-btn {
+  margin-top: 26px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  background: #ff4d6d;
+  color: white;
+  box-shadow: 0 10px 30px rgba(255, 0, 64, 0.45);
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.08);
+  background: #ff1e56;
+}
+
+/* Floating roses */
+.rose {
+  position: absolute;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <img src="4.jpeg" class="love-img" alt="love">
+
+  
+  <h1>Congratulations! </h1>
+  <p>You have made the right choice by choosing me and my world turned crimson with love.</p>
+
+  <div class="love-text">
+    HAPPY VALENTINES DAY MY BELOVED PREYOSHI
+  
+    <br>I love you more than anything!
+  </div>
+
+  <br>
+  <button class="music-btn" onclick="toggleMusic()">🎵 Play Our Song</button>
+</div>
+
+
+<audio id="bgMusic" loop>
+  <source src="null.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.querySelector(".music-btn");
+let playing = false;
+
+function toggleMusic() {
+  if (!playing) {
+    music.play();
+    btn.innerHTML = "⏸ Pause Song";
+  } else {
+    music.pause();
+    btn.innerHTML = "🎵 Play Our Song";
+  }
+  playing = !playing;
+}
+
+setInterval(() => {
+  const rose = document.createElement("div");
+  rose.className = "rose";
+  rose.innerHTML = "🌹";
+  rose.style.left = Math.random() * 100 + "vw";
+  rose.style.animationDuration = 5 + Math.random() * 4 + "s";
+  document.body.appendChild(rose);
+
+  setTimeout(() => rose.remove(), 9000);
+}, 400);
+</script>
+
+</body>
+</html>
